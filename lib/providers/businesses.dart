@@ -83,6 +83,21 @@ class Businesses with ChangeNotifier {
     notifyListeners();
   }
 
+  void addNewPageNearby(List<Business> newPageBusinesses) {
+    _nearby.addAll(newPageBusinesses);
+    notifyListeners();
+  }
+
+  void addNewPageTop(List<Business> newPageBusinesses) {
+    _top.addAll(newPageBusinesses);
+    notifyListeners();
+  }
+
+  void addNewPageSearch(List<Business> newPageBusiness){
+    _search.addAll(newPageBusiness);
+    notifyListeners();
+  }
+
   Business findById(String id) {
     return _nearby.where((business) => business.id == id) as Business;
   }
